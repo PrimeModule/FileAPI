@@ -2741,7 +2741,7 @@
 						  '--_' + boundary + ('\r\nContent-Disposition: form-data; name="'+ file.name +'"'+ (file.file ? '; filename="'+ encodeURIComponent(file.file) +'"' : '')
 						+ (file.file ? '\r\nContent-Type: '+ (file.type || 'application/octet-stream') : '')
 						+ '\r\n'
-						+ '\r\n'+ (file.file ? blob : encodeURIComponent(blob))
+						+ '\r\n'+ blob
 						+ '\r\n')
 					);
 					queue.next();
