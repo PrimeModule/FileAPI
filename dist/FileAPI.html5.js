@@ -1090,6 +1090,7 @@
 			upload: function (options){
 				options = _extend({
 					  jsonp: 'callback'
+					, method: 'POST'
 					, prepare: api.F
 					, beforeupload: api.F
 					, upload: api.F
@@ -1840,7 +1841,7 @@
 				api.getDropFiles(evt, function (files, all){
 					onDrop.call(evt[currentTarget], files, all, evt);
 				});
-				
+
 				onHover.call(evt[currentTarget], false, evt);
 			});
 		}
@@ -2999,7 +3000,7 @@
 					url += (url.indexOf('?') < 0 ? "?" : "&") + data.params.join("&");
 				}
 
-				xhr.open('POST', url, true);
+				xhr.open(options.method, url, true);
 
 				if( api.withCredentials ){
 					xhr.withCredentials = "true";
